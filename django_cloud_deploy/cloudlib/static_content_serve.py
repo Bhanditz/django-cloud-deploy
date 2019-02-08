@@ -58,8 +58,7 @@ class StaticContentServeClient(object):
             StaticContentServeError: When it fails to list buckets under the
                 given project.
         """
-        request = self._storage_service.buckets().list(
-            project=project_id)
+        request = self._storage_service.buckets().list(project=project_id)
         response = request.execute()
         if 'items' not in response:
             raise StaticContentServeError(

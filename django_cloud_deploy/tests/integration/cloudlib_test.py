@@ -18,8 +18,8 @@ from django_cloud_deploy.tests.lib import test_base
 from django_cloud_deploy.tests.lib import utils
 
 
-class StaticContentServeClientIntegrationTest(
-        test_base.DjangoFileGeneratorTest, test_base.ResourceCleanUpTest):
+class StaticContentServeClientIntegrationTest(test_base.DjangoFileGeneratorTest,
+                                              test_base.ResourceCleanUpTest):
     """Integration test for django_gke.cloudlib.static_content_serve."""
 
     def setUp(self):

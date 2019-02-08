@@ -26,11 +26,9 @@ BUCKET_NAME = 'fake_bucket_name'
 EXISTING_BUCKET_NAME = 'existing_bucket'
 
 FAKE_BUCKET_LIST_RESPONSE = {
-    'items': [
-        {
-            'name': EXISTING_BUCKET_NAME,
-        }
-    ]
+    'items': [{
+        'name': EXISTING_BUCKET_NAME,
+    }]
 }
 
 FAKE_IAM_POLICY = {
@@ -144,8 +142,8 @@ class StaticContentServeClientTest(absltest.TestCase):
                          self._storage_service_fake.buckets().buckets)
 
     def test_reuse_bucket_already_exist(self):
-        self._static_content_serve_client.create_bucket(
-            PROJECT_ID, EXISTING_BUCKET_NAME)
+        self._static_content_serve_client.create_bucket(PROJECT_ID,
+                                                        EXISTING_BUCKET_NAME)
         self.assertIn(EXISTING_BUCKET_NAME,
                       self._storage_service_fake.buckets().buckets)
 
